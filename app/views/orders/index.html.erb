@@ -1,0 +1,22 @@
+<h1> All the orders you have made </h1>
+
+<p>
+  <strong>Here's your most recent order! Click to view/edit it!</strong>
+  <p> <%= link_to "View your last order", order_path(@orders.last.id) %>
+  <p> <%= link_to  "Edit your last order", edit_order_path(@orders.last.id) %>
+      
+  <p> You've made orders from the following restaurants: </p> 
+   <ul>
+   <% @orders.each do |order| %>
+   <li> <%= link_to order.restaurant.name, order_path(order) %> 
+    date: <%=  order.date%> 
+    <%= button_to 'delete order', order_path(order.id),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete your order?' } %>
+    
+    </li >
+   <% end %>
+    </ul>
+  
+</p>    
+  

@@ -1,0 +1,32 @@
+<h1> My order </h1>
+
+
+<p>
+  <strong></strong>
+  <p> These are your items: </p> 
+   <ul>
+   <% for item in @order.items %>
+   <li> <%= item.name %> <img style="width: 20%;" src="<%= item.image %>" /> 
+   </li >
+   
+   <% end %>
+    </ul>
+  
+</p>
+ 
+
+
+<h2>Your total is: £ <%=  @order.price %> </h2>
+<h2> Your order is being prepared!<h2>
+
+<h4> <%= link_to 'Edit', edit_order_path %> </h4>
+<h4> <%= link_to 'All orders', orders_path %> </h4>
+
+<h3> <%= link_to 'Click here if you would like to make a new order ', restaurants_path %> </h3>
+
+
+
+
+
+
+

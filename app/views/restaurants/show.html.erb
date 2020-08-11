@@ -1,0 +1,14 @@
+<h3>You've chosen:</h3>
+
+<h1> <%= @restaurant.name %> </h2>
+
+<h2> Create your  order here </h2>
+<%= form_with url: '/orders' do |f|%>
+<%= hidden_field :restaurant, :id, value: @restaurant.id %>
+<%= collection_select :items, :item_1,  Item.all, :id, :name%>
+<%= collection_select :items, :item_2,  Item.all, :id, :name%>
+<%= collection_select :items, :item_3,  Item.all, :id, :name%>
+
+<%= f.submit "create"%>
+
+<% end %>

@@ -1,0 +1,13 @@
+<h1></h1>
+
+<h1>All of your awesome restaurant choices!</h1>
+
+  <h3> Click the restaurant of your choice to make the order </h3>
+  
+  <% @restaurant.map do |rest| %>
+    <li>
+  <%= link_to rest.name, restaurant_path(rest) %> 
+  <%= rest.address%>
+    </li>
+      <% end %>
+  

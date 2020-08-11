@@ -1,0 +1,16 @@
+<h1> Edit your order before it's too late! </h1>
+
+<h2> Edit your  order here </h2>
+<%= form_with model: @order do |f| %>
+<%= hidden_field :restaurant, :id, value: @order.restaurant.id %>
+<%= collection_select :items, :item_1,  Item.all, :id, :name%>
+<%= collection_select :items, :item_2,  Item.all, :id, :name%>
+<%= collection_select :items, :item_3,  Item.all, :id, :name%>
+
+<%= f.submit "Update" %>
+
+<% end %>
+
+
+
+<%= link_to 'Back', restaurants_path %>
